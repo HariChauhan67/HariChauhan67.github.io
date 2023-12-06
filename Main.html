@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tick Box Example</title>
+    <style>
+        #tickBox {
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+        function addTick() {
+            document.getElementById('tickBox').innerHTML = '&#10003;';
+        }
+
+        function removeTick() {
+            document.getElementById('tickBox').innerHTML = '';
+        }
+    </script>
+</head>
+<body>
+
+    <div id="tickBox"></div>
+    <button onclick="addTick()">Add Tick</button>
+    <button onclick="removeTick()">Remove Tick</button>
+
+</body>
+</html>
