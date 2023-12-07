@@ -3,43 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Score Card</title>
-<style>
-  .team-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 100px; /* Adjust the margin to create a larger gap */
-  }
-  .team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .score-buttons {
-    display: flex;
-    align-items: center;
-  }
-  .buttons {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-  }
-</style>
-<script>
-let score1 = 0;
-let score2 = 0;
-
-function updateScore(team, value) {
-  if (team === 1) {
-    score1 += value;
-    document.getElementById('score1').textContent = score1;
-  } else if (team === 2) {
-    score2 += value;
-    document.getElementById('score2').textContent = score2;
-  }
-}
-</script>
+<title>Main</title>
 </head>
 <body>
 
@@ -81,3 +45,5 @@ function updateScore(team, value) {
 
 </body>
 </html>
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/script.js"></script>
