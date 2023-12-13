@@ -18,3 +18,10 @@
     flex-direction: column;
     margin: 10px;
 }
+.question {
+    display: flex;
+    justify-content: space-between;
+}
+.left, .right{
+    width: 45%;
+}
