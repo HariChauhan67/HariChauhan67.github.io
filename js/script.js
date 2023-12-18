@@ -11,31 +11,38 @@ function updateScore(team, value) {
   }
 }
 
-var lines;
-var randomNumber;
-var lastRandomNumber;
+var lines = [];
+var lastRandomNumbers = [];
 
 $(document.body).ready(function() {
-  // load the text file from the server
-  $.ajax({
-    url: '../Topics/Quiz/1.General.txt'
-  }).done(function(content) {
-    // split the content into lines
-    lines = content.split('\n');
-  });
+  // load the text files from the server
+  for (var i = 1; i <= 20; i++) {
+    $.ajax({
+      url: 'textfile' + i + '.txt'
+    }).done(function(content) {
+      // split the content into lines
+      var fileLines = content.split('\n');
+      lines.push(fileLines);
+    });
+  }
 
   // add a click event listener to the button
   $('#button').click(function() {
-    // generate a random number
-    do {
-      randomNumber = Math.floor(Math.random() * lines.length);
-    } while (randomNumber === lastRandomNumber);
+    // generate a random number for each h2 tag
+    var randomNumbers = [];
+    for (var i = 0; i < 20; i++) {
+      var randomNumber;
+      do {
+        randomNumber = Math.floor(Math.random() * lines[i].length);
+      } while (randomNumber === lastRandomNumbers[i]);
+      randomNumbers.push(randomNumber);
+      lastRandomNumbers[i] = randomNumber;
+    }
 
-    // set the variable to the random line
-    var randomLine = lines[randomNumber];
-    $('#variable').text(randomLine);
-
-    // remember the last random number
-    lastRandomNumber = randomNumber;
+    // set the text of each h2 tag to the random line
+    for (var i = 1; i <= 20; i++) {
+      var randomLine = lines[i - 1][randomNumbers[i - 1]];
+      $('#topic' + i).text(randomLine);
+    }
   });
 });
