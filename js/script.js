@@ -18,7 +18,7 @@ $(document.body).ready(function() {
   // load the text files from the server
   for (var i = 1; i <= 20; i++) {
     $.ajax({
-      url: 'textfile' + i + '.txt'
+      url: '../Topics/' + i + '.txt'
     }).done(function(content) {
       // split the content into lines
       var fileLines = content.split('\n');
@@ -42,7 +42,7 @@ $(document.body).ready(function() {
     // set the text of each h2 tag to the random line
     for (var i = 1; i <= 20; i++) {
       var randomLine = lines[i - 1][randomNumbers[i - 1]];
-      $('#topic' + i).text(randomLine);
+      $('#h2' + i).text(randomLine);
     }
   });
 });
