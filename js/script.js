@@ -10,18 +10,3 @@ function updateScore(team, value) {
     document.getElementById('score2').textContent = score2;
   }
 }
-
-var lines = [];
-var lastRandomNumbers = [];
-
-$(document).ready(function() {
-  $("#Random").click(function() {
-    for (var i = 1; i <= 20; i++) {
-      $.get("Topics/" + i + ".txt", function(data) {
-        var lines = data.split("\n");
-        var line = lines[Math.floor(Math.random() * lines.length)];
-        $("#Topic" + i).text(line);
-      });
-    }
-  });
-});
