@@ -27,7 +27,7 @@ $(document.body).ready(function() {
   }
 
   // add a click event listener to the button
-  $('#button').click(function() {
+  $('#Random').click(function() {
     // generate a random number for each h2 tag
     var randomNumbers = [];
     for (var i = 0; i < 20; i++) {
@@ -42,7 +42,7 @@ $(document.body).ready(function() {
     // set the text of each h2 tag to the random line
     for (var i = 1; i <= 20; i++) {
       var randomLine = lines[i - 1][randomNumbers[i - 1]];
-      $('#h2' + i).text(randomLine);
+      $('#Topic' + i).text(randomLine);
     }
   });
 });
