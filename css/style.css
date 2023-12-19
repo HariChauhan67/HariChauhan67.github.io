@@ -4,6 +4,9 @@ h1 {
 h2 {
     font-size: 20px;
 }
+p {
+    font-size: 10px;
+}
 .team-container {
     display: flex;
     justify-content: space-between;

@@ -11,13 +11,13 @@ function updateScore(team, value) {
   }
 }
 
-const h2Tags = document.querySelectorAll('h2');
+const pTags = document.querySelectorAll('p');
 const topicsFolder = '../Topics/';
 const fileExtension = '.txt';
 const randomButton = document.getElementById('Random');
 
 randomButton.addEventListener('click', () => {
-  for (let i = 0; i < h2Tags.length; i++) {
+  for (let i = 0; i < pTags.length; i++) {
     const fileName = topicsFolder + (i + 1) + fileExtension;
     fetch(fileName)
       .then(response => response.text())
@@ -25,7 +25,7 @@ randomButton.addEventListener('click', () => {
         const lines = text.split('\n');
         const randomIndex = Math.floor(Math.random() * lines.length);
         const randomLine = lines[randomIndex];
-        h2Tags[i].textContent = h2Tags[i].textContent.split(':')[0] + `: ${randomLine}`;
+        pTags[i].textContent = pTags[i].textContent.split('\n')[0] + `\n ${randomLine}`;
       });
   }
 });
